@@ -3,7 +3,7 @@ package com.hendra.belajarretrofit2.api_service
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor;
+import okhttp3.logging.HttpLoggingInterceptor
 
 class ApiClient {
 
@@ -13,7 +13,8 @@ class ApiClient {
         //127.0.0.1 (localhost emulator) -> 10.0.2.2 (localhost PC)
         //lihat res->xml->network_security_config.xml
 
-        val baseURL = "http://10.0.2.2/BelajarRetrofit2/"
+        //val baseURL = "http://10.0.2.2/BelajarRetrofit2/"
+        val baseURL = "http://192.168.100.13:3000/"
 
         @Volatile
         private var INSTANCE: Retrofit? = null

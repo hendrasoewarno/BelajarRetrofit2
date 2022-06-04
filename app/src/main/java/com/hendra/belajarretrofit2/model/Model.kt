@@ -38,8 +38,8 @@ Contoh json
 
 {
     "merek": "Bengkel555",
-    "alamat": "Jl. Pangeran Jayakarta No. 123"
-    "type": "car"
+    "alamat": "Jl. Pangeran Jayakarta No. 123",
+    "type": "car",
     "lat": 95.23456,
     "long": 133.23456
 }
@@ -65,8 +65,19 @@ data class Workshop(
     var id: Int? = null
 }
 
-/*
-Deklarasi data class untuk Model APIResponse
+//Deklarasi data class untuk Model APIResponse
+ /*
+ {
+    "status":"1",
+    "message": "berhasil",
+    "data" : "{
+        \"merek\": \"Bengkel555\",
+        \"alamat\": \"Jl. Pangeran Jayakarta No. 123\",
+        \"type\": \"car\",
+        \"lat\": 95.23456,
+        \"long\": 133.23456
+    }
+ }
  */
 data class APIResponse(
     @ColumnInfo(name = "status")
@@ -80,4 +91,3 @@ data class APIResponse(
 ) {
 
 }
-
