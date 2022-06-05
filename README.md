@@ -1,5 +1,5 @@
 # BelajarRetrofit2
-Contoh Koding komunikasi web dengan Retrofit2 dengan Model MVVM
+Contoh Koding komunikasi frontend-backend dengan Retrofit2 dengan Model MVVM dan Python
 
 ## PHP
 Pada contoh ini akan memanggil url:
