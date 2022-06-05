@@ -14,7 +14,8 @@ class ApiClient {
         //lihat res->xml->network_security_config.xml
 
         //val baseURL = "http://10.0.2.2/BelajarRetrofit2/"
-        val baseURL = "http://192.168.100.13:3000/"
+        //val baseURL = "http://192.168.100.13:3000/"
+        val baseURL = "http://172.21.5.230:3000/"
 
         @Volatile
         private var INSTANCE: Retrofit? = null

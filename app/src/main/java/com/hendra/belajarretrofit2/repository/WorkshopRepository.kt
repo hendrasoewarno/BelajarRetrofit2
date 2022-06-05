@@ -10,8 +10,15 @@ import com.hendra.belajarretrofit2.api_service.ApiInterface
 import com.hendra.belajarretrofit2.model.APIResponse
 import com.hendra.belajarretrofit2.model.Customer
 import com.hendra.belajarretrofit2.model.Workshop
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 import java.lang.Exception
 
 class WorkshopRepository {
@@ -50,6 +57,36 @@ class WorkshopRepository {
             }
 
             return workshop;
+        }
+
+        //ASync
+        fun uploadPhoto(context: Context, id: Int, file: File) {
+            val requestFile: RequestBody = file.asRequestBody("text/plain".toMediaTypeOrNull())
+
+            //siapkan multipart/form-data
+            val filePart: MultipartBody.Part =
+                MultipartBody.Part.createFormData("photo", file.getName(), requestFile) //pada multer harus sesuai
+            val idPart: RequestBody = id.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+
+            val call: Call<APIResponse?>? =
+                apiService.uploadPhoto(idPart, filePart)
+
+            //memanggil create secara async
+            call!!.enqueue(object : Callback<APIResponse?> {
+                override fun onResponse(
+                    call: Call<APIResponse?>,
+                    response: Response<APIResponse?>
+                ) {
+                    var apiResponse: APIResponse? = response.body()
+                    if (apiResponse!!.status == "1") {
+                        Log.d("TAG", "Response = ${apiResponse!!.message}");
+                    }
+                }
+
+                override fun onFailure(call: Call<APIResponse?>, t: Throwable) {
+                    Log.d("TAG", "Response = $t")
+                }
+            })
         }
     }
 }

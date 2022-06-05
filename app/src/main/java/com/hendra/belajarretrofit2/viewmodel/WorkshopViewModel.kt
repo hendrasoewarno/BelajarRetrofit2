@@ -9,6 +9,7 @@ import com.hendra.belajarretrofit2.repository.WorkshopRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.File
 
 /*
 Dalam hal ini LoginViewModel kita merepresentasikan ViewModel yang
@@ -26,6 +27,10 @@ class WorkshopViewModel : ViewModel() {
         }
         job.join() //wait until child coroutine completes
         return liveDataWorkshop
+    }
+
+    fun uploadPhoto(context: Context, id: Int, file: File) {
+        WorkshopRepository.uploadPhoto(context, id, file);
     }
 }
 

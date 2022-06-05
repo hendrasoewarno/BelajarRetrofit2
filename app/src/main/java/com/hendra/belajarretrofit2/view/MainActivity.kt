@@ -10,6 +10,10 @@ import com.hendra.belajarretrofit2.model.Customer
 import com.hendra.belajarretrofit2.model.Workshop
 import com.hendra.belajarretrofit2.viewmodel.WorkshopViewModel
 import kotlinx.coroutines.*
+import android.os.Environment
+import android.util.Log
+import java.io.File
+
 
 class MainActivity : AppCompatActivity() {
     var apiResponse: APIResponse? = null
@@ -17,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
     }
 
     override fun onStart() {
@@ -39,5 +45,9 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
+        var dummy = File(baseContext.getFilesDir(), "dummy.txt")
+        dummy.writeText("Hello World")
+
+        workshopViewModel.uploadPhoto(baseContext, 1, dummy)
     }
 }
