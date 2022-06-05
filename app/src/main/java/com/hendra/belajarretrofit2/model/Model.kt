@@ -13,7 +13,7 @@ Contoh json
 {
     type: "car",
     lat: 95.12345,
-    long: 133.12345
+    lon: 133.12345
 }
  */
 
@@ -75,7 +75,7 @@ data class Workshop(
         \"alamat\": \"Jl. Pangeran Jayakarta No. 123\",
         \"type\": \"car\",
         \"lat\": 95.23456,
-        \"long\": 133.23456
+        \"lon\": 133.23456
     }
  }
  */

@@ -7,7 +7,7 @@ http://10.0.2.2/BelajarRetrofit2/api/v1/getWorkshop.php
 
 Dengan payload:
 
-{"type":"Car", "lat":95.12345, "long":133.12345}
+{"type":"Car", "lat":95.12345, "lon":133.12345}
 
 dan diresponse dengan:
 
@@ -15,7 +15,7 @@ dan diresponse dengan:
 "status":"1",
 "message":"Berhasil",
 "data":
-"{\"merek\":\"Bengkel555\",\"alamat\": \"Jl. Pangeran Jayakarta No. 123\",\"type\": \"car\",\"lat\": 95.23456,\"long\": 133.23456}"
+"{\"merek\":\"Bengkel555\",\"alamat\": \"Jl. Pangeran Jayakarta No. 123\",\"type\": \"car\",\"lat\": 95.23456,\"lon\": 133.23456}"
 }
 
 getWorkshop.php
@@ -34,7 +34,7 @@ $customer = json_decode($body); //ubah ke objek customer
 Untuk mengakses masing-masing key pada customer
 $customer->type
 $customer->lat
-$customer->long
+$customer->lon
 */
 
 $workshop = <<<EOD
@@ -43,7 +43,7 @@ $workshop = <<<EOD
     "alamat": "Jl. Pangeran Jayakarta No. 123",
     "type": "car",
     "lat": 95.23456,
-    "long": 133.23456
+    "lon": 133.23456
 }
 EOD;
 
@@ -85,7 +85,7 @@ getWorkshop.post('/api/v1/getWorkshop', function (req, res, next) {
     //untuk mengakses masing-masing req
     console.log(req.body.type)
     console.log(req.body.lat)
-    console.log(req.body.long)
+    console.log(req.body.lon)
 
     //dummy workshop response, nanti disini diganti dengan hasil dari ML
     var workshop = {
@@ -93,7 +93,7 @@ getWorkshop.post('/api/v1/getWorkshop', function (req, res, next) {
 	"alamat": "Jl. Pangeran Jayakarta No. 123",
 	"type": "car",
 	"lat": 95.23456,
-	"long": 133.23456
+	"lon": 133.23456
     }
 
     res.send(
