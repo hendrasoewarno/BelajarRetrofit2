@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         var workshopViewModel = WorkshopViewModel()
 
 
-        var customer: Customer = Customer(type = "Car", lat = 95.12345, long = 133.12345)
+        var customer: Customer = Customer(type = "Car", lat = 95.12345, lon = 133.12345)
 
         //suatu suspend fun harus dipanggil dalam runBlocking
         runBlocking {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             workshop!!.observe(this@MainActivity, Observer {
                 if (it != null) {
                     //Disini anda mengupdate ke View, dalam hal ini kita cetak saja hasil ke console
-                    println(it.type + " " + it.merek + " " + it.lat + " " + it.long);
+                    println(it.type + " " + it.merek + " " + it.lat + " " + it.lon)
                 }
             })
         }

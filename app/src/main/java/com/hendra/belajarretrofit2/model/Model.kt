@@ -25,7 +25,7 @@ data class Customer(
     var lat: Double? = null,
 
     @ColumnInfo(name = "lon")
-    var long: Double? = null
+    var lon: Double? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -41,7 +41,7 @@ Contoh json
     "alamat": "Jl. Pangeran Jayakarta No. 123",
     "type": "car",
     "lat": 95.23456,
-    "long": 133.23456
+    "lon": 133.23456
 }
  */
 data class Workshop(
@@ -58,7 +58,7 @@ data class Workshop(
     var lat: Double? = null,
 
     @ColumnInfo(name = "lon")
-    var long: Double? = null
+    var lon: Double? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
