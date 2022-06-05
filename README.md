@@ -60,6 +60,10 @@ echo $response;
 ?>
 ```
 
+Pada contoh ini akan memanggil url:
+
+http://192.168.100.13:3000/api/v1/getWorkshop.php
+
 getWorkshop.js
 ```
 /*
