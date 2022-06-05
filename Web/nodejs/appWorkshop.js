@@ -17,7 +17,7 @@ getWorkshop.post('/api/v1/getWorkshop', function (req, res, next) {
     //untuk mengakses masing-masing req
     console.log(req.body.type)
     console.log(req.body.lat)
-    console.log(req.body.long)
+    console.log(req.body.lon)
 
     //dummy workshop response, nanti disini diganti dengan hasil dari ML
     var workshop = {
@@ -25,7 +25,7 @@ getWorkshop.post('/api/v1/getWorkshop', function (req, res, next) {
 	"alamat": "Jl. Pangeran Jayakarta No. 123",
 	"type": "car",
 	"lat": 95.23456,
-	"long": 133.23456
+	"lon": 133.23456
     }
 
     res.send(
