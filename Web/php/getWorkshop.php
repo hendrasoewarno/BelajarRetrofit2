@@ -12,7 +12,7 @@ $customer = json_decode($body); //ubah ke objek customer
 Untuk mengakses masing-masing key pada customer
 $customer->type
 $customer->lat
-$customer->long
+$customer->lon
 */
 
 $workshop = <<<EOD
@@ -21,7 +21,7 @@ $workshop = <<<EOD
     "alamat": "Jl. Pangeran Jayakarta No. 123",
     "type": "car",
     "lat": 95.23456,
-    "long": 133.23456
+    "lon": 133.23456
 }
 EOD;
 
