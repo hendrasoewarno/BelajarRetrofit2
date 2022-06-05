@@ -136,7 +136,7 @@ INSERT INTO `workshop` (`merek`, `alamat`, `type`, `lat`, `lon`, `id`) VALUES
 ('Bengkel666', 'Jl. Mangga Besar No. 123', 'car', 95.13456, 133.13456, 2);
 ```
 
-getWorshop1.js
+getWorkshop1.js
 ```
 /*
 Ini hanya Stub untuk mensimulasikan sisi server
