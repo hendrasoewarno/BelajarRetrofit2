@@ -1,4 +1,5 @@
 package com.hendra.belajarretrofit2.model
+
 import androidx.room.ColumnInfo
 import androidx.room.PrimaryKey
 
@@ -66,19 +67,19 @@ data class Workshop(
 }
 
 //Deklarasi data class untuk Model APIResponse
- /*
- {
-    "status":"1",
-    "message": "berhasil",
-    "data" : "{
-        \"merek\": \"Bengkel555\",
-        \"alamat\": \"Jl. Pangeran Jayakarta No. 123\",
-        \"type\": \"car\",
-        \"lat\": 95.23456,
-        \"lon\": 133.23456
-    }
- }
- */
+/*
+{
+   "status":"1",
+   "message": "berhasil",
+   "data" : "{
+       \"merek\": \"Bengkel555\",
+       \"alamat\": \"Jl. Pangeran Jayakarta No. 123\",
+       \"type\": \"car\",
+       \"lat\": 95.23456,
+       \"lon\": 133.23456
+   }
+}
+*/
 data class APIResponse(
     @ColumnInfo(name = "status")
     var status: String? = null,
@@ -88,6 +89,16 @@ data class APIResponse(
 
     @ColumnInfo(name = "data")
     var data: String? = null,
+) {
+
+}
+
+data class Species(
+    @ColumnInfo(name = "name")
+    var name: String? = null,
+
+    @ColumnInfo(name = "description")
+    var description: String? = null,
 ) {
 
 }

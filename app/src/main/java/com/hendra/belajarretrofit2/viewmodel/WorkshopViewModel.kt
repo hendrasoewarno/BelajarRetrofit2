@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.hendra.belajarretrofit2.model.Customer
+import com.hendra.belajarretrofit2.model.Species
 import com.hendra.belajarretrofit2.model.Workshop
 import com.hendra.belajarretrofit2.repository.WorkshopRepository
 import kotlinx.coroutines.CoroutineScope
@@ -29,8 +30,8 @@ class WorkshopViewModel : ViewModel() {
         return liveDataWorkshop
     }
 
-    fun uploadPhoto(context: Context, id: Int, file: File) {
-        WorkshopRepository.uploadPhoto(context, id, file);
+    fun uploadPhoto(context: Context, id: Int, file: File,  callback: (count: Species) -> Unit) {
+        WorkshopRepository.uploadPhoto(context, id, file, callback);
     }
 }
 

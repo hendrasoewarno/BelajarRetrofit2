@@ -9,6 +9,7 @@ import com.hendra.belajarretrofit2.api_service.ApiClient
 import com.hendra.belajarretrofit2.api_service.ApiInterface
 import com.hendra.belajarretrofit2.model.APIResponse
 import com.hendra.belajarretrofit2.model.Customer
+import com.hendra.belajarretrofit2.model.Species
 import com.hendra.belajarretrofit2.model.Workshop
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -59,8 +60,8 @@ class WorkshopRepository {
             return workshop;
         }
 
-        //ASync
-        fun uploadPhoto(context: Context, id: Int, file: File) {
+        //ASync, untuk diproses callback
+        fun uploadPhoto(context: Context, id: Int, file: File, callback: (count: Species) -> Unit) {
             val requestFile: RequestBody = file.asRequestBody("text/plain".toMediaTypeOrNull())
 
             //siapkan multipart/form-data
@@ -80,6 +81,13 @@ class WorkshopRepository {
                     var apiResponse: APIResponse? = response.body()
                     if (apiResponse!!.status == "1") {
                         Log.d("TAG", "Response = ${apiResponse!!.message}");
+
+                        var species: Species = Gson().fromJson(
+                            apiResponse!!.data,
+                            Species::class.java
+                        )
+
+                        callback(species) //dipanggil ke callback
                     }
                 }
 
