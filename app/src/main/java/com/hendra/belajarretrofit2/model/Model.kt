@@ -93,6 +93,12 @@ data class APIResponse(
 
 }
 
+/*
+{
+   "name" : "Badak Sumatera",
+   "description" : "Badak Sumatera adalah hewan terancam punah"
+}
+*/
 data class Species(
     @ColumnInfo(name = "name")
     var name: String? = null,

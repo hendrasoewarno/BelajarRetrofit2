@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         var dummy = File(baseContext.getFilesDir(), "dummy.txt")
         dummy.writeText("Hello World")
 
+        //disini kita menggunakan teknik callback untuk mengupdate view
         workshopViewModel.uploadPhoto(baseContext, 1, dummy
         ) { species ->
             println(species.name)
