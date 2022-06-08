@@ -65,11 +65,16 @@ uploadPhoto.post('/api/v1/uploadPhoto', upload.single('photo'),  (req, res, next
     console.log(photo);
     console.log("id=" + id);
 
+    var species = {
+	"name" : "Mazda 2",
+	"description" : "Mazda 2 merupakan kendaraan Hatch Back"
+    }
+
     res.send(
         {
                 "status":1,
                 "message": "berhasil",
-                "data": null
+                "data": JSON.stringify(species)
         })
 
 })
